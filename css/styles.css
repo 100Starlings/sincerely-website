@@ -42,7 +42,7 @@
     /* Match primary red to light mode */
     --color-primary: #d4183d;
     --color-primary-hover: #b81535;
-    --color-primary-dark: #70041e;
+    --color-primary-dark: #ffffff;
     --color-primary-very-dark: #490c13;
     --color-border-soft: rgba(255, 255, 255, 0.18);
     --color-border-accent: rgba(255, 221, 194, 0.4);
@@ -377,10 +377,10 @@
 
   .problem-section-illustration {
     position: absolute;
-    left: 5%;
-    top: 70rem;
+    right: 30%;
+    top: 75rem;
     opacity: var(--opacity-bg-image);
-    transform: rotate(-20deg);
+    transform: rotate(20deg);
     pointer-events: none;
   }
 
@@ -482,10 +482,18 @@
     background-color: rgba(236, 226, 208, 0.3);
   }
   
-  .problem,
-  .problem-content,
-  .approach-card {
+  .problem {
     width: 100%;
+  }
+
+  .problem-content {
+    max-width: var(--max-width-page);
+  }
+
+  .approach-card {
+    max-width: 520px;
+    align-self: flex-start;
+    margin-top: 24px;
   }
   
   .problem > .problem-content,
@@ -517,7 +525,7 @@
   .problem-content p {
     font-size: 18px;
     color: var(--color-text-subtle);
-    margin: 0;
+    line-height: 1.6;
   }
   
   .problem-list {
@@ -527,6 +535,10 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+  }
+
+  .problem-content-inner {
+    max-width: 600px;
   }
   
   .problem-list li::before {
@@ -591,7 +603,7 @@
     top: 4px;
     width: 20px;
     height: 20px;
-    background-image: url("/assets/images/checked-icon.svg");
+    background-image: url("../assets/images/checked-icon.svg");
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -705,7 +717,7 @@
   
   .principle {
     flex: 1 1 320px;
-    border-left: 4px solid var(--color-primary-dark);
+    border-left: 4px solid var(--color-primary);
     padding-left: 28px;
     display: flex;
     flex-direction: column;
@@ -731,7 +743,7 @@
   }
   
   .audience-columns {
-    max-width: 994px;
+    max-width: 784px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;

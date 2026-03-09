@@ -136,27 +136,28 @@
           <header>
             <h2 id="problem-title">The notification visibility problem</h2>
           </header>
-          <p>
-            Most Rails apps implement notifications as mailers, background jobs,
-            or third-party integrations. This approach creates blind spots:
-          </p>
-          <ul class="problem-list">
-            <li>No persistent record of what was sent</li>
-            <li>Delivery tracking requires paid add-ons</li>
-            <li>Communication data locked in external dashboards</li>
-            <li>No way to query notification history</li>
-          </ul>
+          <div class="problem-content-inner">
+            <p>
+              Most Rails apps implement notifications as mailers, background jobs,
+              or third-party integrations. This approach creates blind spots:
+            </p>
+            <ul class="problem-list">
+              <li>No persistent record of what was sent</li>
+              <li>Delivery tracking requires paid add-ons</li>
+              <li>Communication data locked in external dashboards</li>
+              <li>No way to query notification history</li>
+            </ul>
+          </div>
+          <div class="approach-card" aria-label="Sincerely's approach">
+            <h3>Sincerely's approach</h3>
+            <ul class="approach-list">
+              <li>Every notification is a database record</li>
+              <li>Delivery events captured via webhooks</li>
+              <li>Full communication history in your database</li>
+              <li>Query and analyze with ActiveRecord</li>
+            </ul>
+          </div>
         </div>
-
-        <aside class="approach-card" aria-label="Sincerely's approach">
-          <h3>Sincerely's approach</h3>
-          <ul class="approach-list">
-            <li>Every notification is a database record</li>
-            <li>Delivery events captured via webhooks</li>
-            <li>Full communication history in your database</li>
-            <li>Query and analyze with ActiveRecord</li>
-          </ul>
-        </aside>
       </section>
 
       <!-- Core Capabilities -->
@@ -333,18 +334,13 @@ notification.events
           </article>
 
           <article class="principle">
-            <h3>Delivery is asynchronous</h3>
+            <h3>Delivery is observable</h3>
             <p>Accepted does not mean delivered. Track the full lifecycle with real events.</p>
           </article>
 
           <article class="principle">
             <h3>Events drive truth</h3>
             <p>Notification state changes only through delivery and engagement events.</p>
-          </article>
-
-          <article class="principle">
-            <h3>Infrastructure is replaceable</h3>
-            <p>Delivery systems are pluggable abstractions. Switch providers without pain.</p>
           </article>
         </div>
       </section>
@@ -366,20 +362,12 @@ notification.events
             <h3>Perfect for</h3>
             <ul>
               <li>Mid-to-large Rails teams</li>
+              <li>Early-stage MVPs</li>
+              <li>Small indie projects</li>
               <li>B2B or B2C products with business-critical notifications</li>
               <li>Teams using AWS infrastructure (SES)</li>
               <li>Tech leads and platform engineers</li>
               <li>Teams needing communication analytics</li>
-            </ul>
-          </article>
-
-          <article class="audience-card">
-            <h3>Not designed for</h3>
-            <ul>
-              <li>Early-stage MVPs</li>
-              <li>Small indie projects</li>
-              <li>Teams needing only simple email sending</li>
-              <li>Projects without delivery tracking requirements</li>
             </ul>
           </article>
         </div>
